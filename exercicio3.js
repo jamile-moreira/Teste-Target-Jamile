@@ -139,17 +139,15 @@ for (let i = 0; i < bancoDeDados.length; i++) {
 
 let menorFaturamento = Math.min(...diasComFaturamento)
 
-console.log(`O menor valor de faturamento do mês é ${menorFaturamento} `)
+console.log(
+  `O MENOR valor de faturamento em dia útil no mês é ${menorFaturamento} `
+)
 
 let maiorFaturamento = Math.max(...diasComFaturamento)
 
-// for (let i = 0; i < bancoDeDados.length; i++) {
-//   if (bancoDeDados[i].valor >= maiorFaturamento) {
-//     maiorFaturamento = bancoDeDados[i].valor
-//   }
-// }
-
-console.log(`O maior valor de faturamento do mês é ${maiorFaturamento} `)
+console.log(
+  `O MAIOR valor de faturamento em dia útil no mês é ${maiorFaturamento} `
+)
 
 let soma = 0
 
@@ -165,5 +163,5 @@ for (let i = 0; i < diasComFaturamento.length; i++) {
   }
 }
 console.log(
-  `O valor em média do faturamento no dias úteis foi de ${mediaFaturamento}. Os número de dias que foram superior a média foram no total de ${diasFaturamentoAcimaMedia.length} dias.`
+  `O valor em média do faturamento em dias úteis foi de ${mediaFaturamento}. A quantidade de dias que foram superior a média, são no total de ${diasFaturamentoAcimaMedia.length} dias.`
 )
