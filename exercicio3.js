@@ -129,25 +129,6 @@ let bancoDeDados = [
     valor: 8414.61,
   },
 ]
-
-let menorFaturamento = 0
-
-for (let i = 0; i > bancoDeDados.length; i++) {
-  if (bancoDeDados[i].valor >= menorFaturamento) {
-    menorFaturamento = bancoDeDados[i].valor
-  }
-}
-console.log(`O menor valor de faturamento do mês é ${menorFaturamento} `)
-
-let maiorFaturamento = 0
-
-for (let i = 0; i < bancoDeDados.length; i++) {
-  if (bancoDeDados[i].valor >= maiorFaturamento) {
-    maiorFaturamento = bancoDeDados[i].valor
-  }
-}
-console.log(`O maior valor de faturamento do mês é ${maiorFaturamento} `)
-
 let diasComFaturamento = []
 
 for (let i = 0; i < bancoDeDados.length; i++) {
@@ -155,7 +136,20 @@ for (let i = 0; i < bancoDeDados.length; i++) {
     diasComFaturamento.push(bancoDeDados[i].valor)
   }
 }
-// console.log(diasComFaturamento)
+
+let menorFaturamento = Math.min(...diasComFaturamento)
+
+console.log(`O menor valor de faturamento do mês é ${menorFaturamento} `)
+
+let maiorFaturamento = Math.max(...diasComFaturamento)
+
+// for (let i = 0; i < bancoDeDados.length; i++) {
+//   if (bancoDeDados[i].valor >= maiorFaturamento) {
+//     maiorFaturamento = bancoDeDados[i].valor
+//   }
+// }
+
+console.log(`O maior valor de faturamento do mês é ${maiorFaturamento} `)
 
 let soma = 0
 
@@ -163,4 +157,13 @@ for (let i = 0; i < diasComFaturamento.length; i++) {
   soma += diasComFaturamento[i]
 }
 let mediaFaturamento = soma / diasComFaturamento.length
-console.log(mediaFaturamento)
+let diasFaturamentoAcimaMedia = []
+
+for (let i = 0; i < diasComFaturamento.length; i++) {
+  if (diasComFaturamento[i] > mediaFaturamento) {
+    diasFaturamentoAcimaMedia.push(bancoDeDados[i].dia)
+  }
+}
+console.log(
+  `O valor em média do faturamento no dias úteis foi de ${mediaFaturamento}. Os número de dias que foram superior a média foram no total de ${diasFaturamentoAcimaMedia.length} dias.`
+)
